@@ -1,9 +1,9 @@
-﻿using Algorithm.Tree;
-
-namespace DataStructure.Tree.Tests
+﻿namespace DataStructure.Tree.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    using Algorithm.Tree;
 
     [TestClass()]
     public class BinarySearchTreeTests
@@ -51,7 +51,7 @@ namespace DataStructure.Tree.Tests
             this.bst.Upsert(25, 250);
             Assert.AreEqual(250, this.bst.Search(25));
 
-            this.ValidateBst();
+            this.ValidateBst(9);
         }
 
         [TestMethod()]
@@ -68,7 +68,7 @@ namespace DataStructure.Tree.Tests
             this.UpsertSomeNodes();
             this.bst.Upsert(11, 11);
             Assert.AreEqual(10, this.bst.Remove(10));
-            this.ValidateBst();
+            this.ValidateBst(9);
         }
 
         [TestMethod()]
@@ -77,7 +77,7 @@ namespace DataStructure.Tree.Tests
             this.UpsertSomeNodes();
             this.bst.Upsert(29, 29);
             Assert.AreEqual(25, this.bst.Remove(25));
-            this.ValidateBst();
+            this.ValidateBst(9);
         }
 
         [TestMethod()]
@@ -86,7 +86,7 @@ namespace DataStructure.Tree.Tests
             this.UpsertSomeNodes();
             this.bst.Upsert(11, 11);
             Assert.AreEqual(15, this.bst.Remove(15));
-            this.ValidateBst();
+            this.ValidateBst(9);
         }
 
         [TestMethod()]
@@ -94,7 +94,7 @@ namespace DataStructure.Tree.Tests
         {
             this.bst.Upsert(11, 11);
             Assert.AreEqual(11, this.bst.Remove(11));
-            this.ValidateBst();
+            this.ValidateBst(0);
         }
 
         [TestMethod()]
@@ -102,7 +102,7 @@ namespace DataStructure.Tree.Tests
         {
             this.UpsertSomeNodes();
             Assert.AreEqual(12, this.bst.Remove(12));
-            this.ValidateBst();
+            this.ValidateBst(8);
         }
 
         [TestMethod()]
@@ -110,7 +110,7 @@ namespace DataStructure.Tree.Tests
         {
             this.UpsertSomeNodes();
             Assert.AreEqual(28, this.bst.Remove(28));
-            this.ValidateBst();
+            this.ValidateBst(8);
         }
 
         private void UpsertSomeNodes()
@@ -124,16 +124,18 @@ namespace DataStructure.Tree.Tests
             this.bst.Upsert(25, 25);
             this.bst.Upsert(40, 40);
             this.bst.Upsert(28, 28);
-            this.ValidateBst();
+            this.ValidateBst(9);
         }
 
-        private void ValidateBst()
+        private void ValidateBst(int treeSize)
         {
             List<int> keys = new List<int>();
             this.bst.PreOrderTraverse((key, value) =>
             {
                 keys.Add(key);
             });
+
+            Assert.AreEqual(treeSize, keys.Count);
 
             for (int i = 1; i < keys.Count; ++i)
             {
