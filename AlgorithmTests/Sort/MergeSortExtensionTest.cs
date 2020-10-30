@@ -1,11 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithm.Sort;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorithm.Tests
+﻿namespace Algorithm.Tests
 {
+    using Algorithm.Sort;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass()]
     public class MergeSortExtensionTest
     {

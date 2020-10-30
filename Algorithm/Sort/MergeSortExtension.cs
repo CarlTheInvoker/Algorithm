@@ -1,11 +1,13 @@
 ﻿namespace Algorithm.Sort
 {
     using System;
+    using System.Collections.Generic;
+
     public static class MergeSortExtension
     {
-        public static void MergeSort<TElement>(this TElement[] elements) where TElement : IComparable<TElement>
+        public static void MergeSort<TElement>(this IList<TElement> elements) where TElement : IComparable<TElement>
         {
-            MergeSort(elements, new TElement[elements.Length], 0, elements.Length);
+            MergeSort(elements, new TElement[elements.Count], 0, elements.Count);
         }
 
         /// <summary>
@@ -16,7 +18,7 @@
         /// <param name="temp">A temp array used when merge</param>
         /// <param name="start">Start index</param>
         /// <param name="end">End index</param>
-        private static void MergeSort<TElement>(TElement[] elements, TElement[] temp, int start, int end) where TElement : IComparable<TElement>
+        private static void MergeSort<TElement>(IList<TElement> elements, IList<TElement> temp, int start, int end) where TElement : IComparable<TElement>
         {
             if (start == end - 1) return;
             int middle = (start + end) / 2;
