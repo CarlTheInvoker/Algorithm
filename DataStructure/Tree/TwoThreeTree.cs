@@ -65,12 +65,14 @@
             }
 
             // Insert a new key into parent which is a leaf node now
-            int insertIndex = parent.GetInsertIndex(key);
-            parent.MoveKeyValue(insertIndex);
-            parent.Keys[insertIndex] = key;
-            parent.Values[insertIndex] = value;
-            parent.KeyCount++;
-            parent.SplitIfNeeded();
+            // Rename it for better readability
+            Node leaf = parent;
+            int insertIndex = leaf.GetInsertIndex(key);
+            leaf.MoveKeyValue(insertIndex);
+            leaf.Keys[insertIndex] = key;
+            leaf.Values[insertIndex] = value;
+            leaf.KeyCount++;
+            leaf.SplitIfNeeded();
 
             if (this.Root.Parent != null)
             {
@@ -154,18 +156,19 @@
                 this.Children[2] = null;
                 this.Children[3] = null;
 
-                // Will insert the, note that we don't clear the keys and values we need to access it after check keyCount 
+                // Will insert the middle key value into parent
+                // note that we don't clear the keys and values we need to access it after check keyCount 
                 TKey middleKey = this.Keys[1];
                 TValue middleValue = this.Values[1];
 
                 if (this.Parent == null)
                 {
-                    // In this case, index could be set to any value
                     Node parent = new Node(null, middleKey, middleValue);
+                    
+                    // Update the parent's children link
                     this.Parent = parent;
                     sibling.Parent = parent;
 
-                    // Update the parent's children link
                     parent.Children[0] = this;
                     parent.Children[1] = sibling;
                 }
@@ -181,6 +184,7 @@
                     parent.Keys[index] = middleKey;
                     parent.Values[index] = middleValue;
 
+                    // Set the right children link
                     parent.Children[index + 1] = sibling;
                     parent.Children[index] = this;
 
