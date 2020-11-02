@@ -3,7 +3,7 @@
     using System;
     using DataStructure.Tree;
     
-    public static class TraverseExtension
+    public static class BstTraverseExtension
     {
         public static void PreOrderTraverse<TKey, TValue>(this BinarySearchTree<TKey, TValue> tree, Action<TKey, TValue> action)
             where TKey : IComparable<TKey>
