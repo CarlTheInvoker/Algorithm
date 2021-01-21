@@ -14,6 +14,7 @@ They are categorized by the data structure and algorithm used in the solution.
 
 - **Basic math**:
   - [Medium - 0754 - Reach a Number](.\LeetCode\Problem0754.cs)
+  - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
 - **Binary search**:
   - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
 - **Bit operation**:
