@@ -12,16 +12,20 @@ They are categorized by the data structure and algorithm used in the solution.
 
 ## Algorithm
 
-- **Basic math**:
-  - [Medium - 0754 - Reach a Number](.\LeetCode\Problem0754.cs)
-  - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
-- **Binary search**:
-  - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
-- **Bit operation**:
-  - [Medium - 0338 - Counting Bits](.\LeetCode\Problem0338.cs)
-- **Greedy algorithm**:
-  - [Hard - 1520 - Maximum Number of Non-Overlapping Substrings](.\LeetCode\Problem1520.cs)
+- **Basic**:
+  - *Math*:
+    - [Medium - 0754 - Reach a Number](.\LeetCode\Problem0754.cs)
+    - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
+  - *Bit operation*:
+    - [Medium - 0338 - Counting Bits](.\LeetCode\Problem0338.cs)
+- **Sort & Search**:
+  - *Search - BinarySearch*:
+    - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
+  - *Sort - MergeSort*:
+    - [Hard - 0493 - Reverse Pairs](.\LeetCode\Problem0493.cs)
 - **String operation**:
   - [Medium - 0722 - Remove Comments](.\LeetCode\Problem0722.cs)
+- **Greedy algorithm**:
+  - [Hard - 1520 - Maximum Number of Non-Overlapping Substrings](.\LeetCode\Problem1520.cs)
 - **Dynamic Programming**:
   - [Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee](.\LeetCode\Problem0714.cs)
