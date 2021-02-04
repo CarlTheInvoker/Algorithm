@@ -1,6 +1,6 @@
 ﻿namespace OjProblems.LeetCode
 {
-    public class Problem0338
+    internal class Problem0338
     {
         /// <summary>
         /// Consider numbers in [0, 1, ..., 2^k - 1] and [2^k, 2^k + 1, ..., 2^(k + 1) - 1]

@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class Problem0754
+    internal class Problem0754
     {
         public class Solution
         {

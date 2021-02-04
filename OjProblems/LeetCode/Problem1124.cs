@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class Problem1124
+    internal class Problem1124
     {
         public class Solution
         {

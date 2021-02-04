@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class Problem0493
+    internal class Problem0493
     {
         public class Solution
         {

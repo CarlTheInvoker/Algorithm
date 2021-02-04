@@ -1,6 +1,6 @@
 ﻿namespace OjProblems.LeetCode
 {
-    public class Problem0829
+    internal class Problem0829
     {
         public class Solution
         {

@@ -1,6 +1,6 @@
 ﻿namespace OjProblems.LeetCode
 {
-    public class Problem0793
+    internal class Problem0793
     {
         // We just need to check if there exist one number num satisfying that num! has k zeros in the end.
         // If yes, return 5. no, return 0
