@@ -9,6 +9,8 @@ They are categorized by the data structure and algorithm used in the solution.
 - **Stack**:
   - [Medium - 0071 - Simplify Path](.\LeetCode\Problem0071.cs)
   - [Medium - 1124 - Longest Well-Performing Interval](.\LeetCode\Problem1124.cs)
+- **Binary Tree**:
+  - [Medium - 1145 - Binary Tree Coloring Game](.\LeetCode\Problem1145.cs)
 
 ## Algorithm
 
