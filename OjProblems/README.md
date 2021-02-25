@@ -14,12 +14,11 @@ They are categorized by the data structure and algorithm used in the solution.
 
 ## Algorithm
 
-- **Basic**:
-  - *Math*:
-    - [Medium - 0754 - Reach a Number](.\LeetCode\Problem0754.cs)
-    - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
-  - *Bit operation*:
-    - [Medium - 0338 - Counting Bits](.\LeetCode\Problem0338.cs)
+- **Math**:
+  - [Medium - 0754 - Reach a Number](.\LeetCode\Problem0754.cs)
+  - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
+- **Bit operation**:
+  - [Medium - 0338 - Counting Bits](.\LeetCode\Problem0338.cs)
 - **Sort & Search**:
   - *Search - BinarySearch*:
     - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
@@ -31,3 +30,7 @@ They are categorized by the data structure and algorithm used in the solution.
   - [Hard - 1520 - Maximum Number of Non-Overlapping Substrings](.\LeetCode\Problem1520.cs)
 - **Dynamic Programming**:
   - [Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee](.\LeetCode\Problem0714.cs)
+- **Back Tracing**:
+  - [Hard - 0051 - N-Queens](.\LeetCode\Problem0051.cs)
+  - [Medium - 0526 - Beautiful Arrangement](.\LeetCode\Problem0526.cs)
+  - [Hard - 1655 - Distribute Repeating Integers](.\LeetCode\Problem1655.cs)

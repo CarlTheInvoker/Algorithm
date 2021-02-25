@@ -28,7 +28,7 @@
                 return noStockTomorrow;
             }
 
-            public int MaxProfitWithArray(int[] prices, int fee)
+            private int MaxProfitWithArray(int[] prices, int fee)
             {
                 // hasStock[i] means max profit we could make in rest of days if we have stock at the beginning of day i
                 int[] hasStock = new int[prices.Length];
