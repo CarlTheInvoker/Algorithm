@@ -36,3 +36,7 @@ They are categorized by the data structure and algorithm used in the solution.
   - [Hard - 0051 - N-Queens](.\LeetCode\Problem0051.cs)
   - [Medium - 0526 - Beautiful Arrangement](.\LeetCode\Problem0526.cs)
   - [Hard - 1655 - Distribute Repeating Integers](.\LeetCode\Problem1655.cs)
+
+## Others
+
+- [Hard - 1591 - Strange Printer II](.\LeetCode\Problem1591.cs)
