@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-
-namespace OjProblems.LeetCode
+﻿namespace OjProblems.LeetCode
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     internal class Problem1727
     {
         public class Solution
@@ -14,7 +12,7 @@ namespace OjProblems.LeetCode
             {
                 // Processing the matrix, after the procedure
                 // matrix[i][j] is the max length of consecutive 1s which ends at i-th index in column j
-                for(int i = 1; i < matrix.Length; ++i)
+                for (int i = 1; i < matrix.Length; ++i)
                 {
                     for (int j = 0; j < matrix[i].Length; ++j)
                     {
