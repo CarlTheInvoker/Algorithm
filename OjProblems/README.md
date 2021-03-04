@@ -24,6 +24,8 @@ They are categorized by the data structure and algorithm used in the solution.
     - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
   - *Sort - MergeSort*:
     - [Hard - 0493 - Reverse Pairs](.\LeetCode\Problem0493.cs)
+  - *Sort*:
+    - [Medium - 1727 - Largest Submatrix With Rearrangements](.\LeetCode\Problem1727.cs)
 - **String operation**:
   - [Medium - 0722 - Remove Comments](.\LeetCode\Problem0722.cs)
 - **Greedy algorithm**:
