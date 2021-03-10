@@ -10,7 +10,9 @@ They are categorized by the data structure and algorithm used in the solution.
   - [Medium - 0071 - Simplify Path](.\LeetCode\Problem0071.cs)
   - [Medium - 1124 - Longest Well-Performing Interval](.\LeetCode\Problem1124.cs)
 - **Binary Tree**:
+  - [Medium - 0113 - Path Sum II](.\LeetCode\Problem0113.cs)
   - [Medium - 1145 - Binary Tree Coloring Game](.\LeetCode\Problem1145.cs)
+  - [Medium - 1325 - Delete Leaves With a Given Value](.\LeetCode\Problem1325.cs)
 
 ## Algorithm
 
