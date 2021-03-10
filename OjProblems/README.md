@@ -21,6 +21,8 @@ They are categorized by the data structure and algorithm used in the solution.
   - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
 - **Bit operation**:
   - [Medium - 0338 - Counting Bits](.\LeetCode\Problem0338.cs)
+- **Brutal force**:
+  - [Hard - 0679 - 24 Game](.\LeetCode\Problem0679.cs)
 - **Sort & Search**:
   - *Search - BinarySearch*:
     - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
