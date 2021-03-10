@@ -32,6 +32,7 @@ They are categorized by the data structure and algorithm used in the solution.
   - [Hard - 1520 - Maximum Number of Non-Overlapping Substrings](.\LeetCode\Problem1520.cs)
 - **Dynamic Programming**:
   - [Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee](.\LeetCode\Problem0714.cs)
+  - [Hard - 0118 - Best Time to Buy and Sell Stock IV](.\LeetCode\Problem0188.cs)
 - **Back Tracing**:
   - [Hard - 0051 - N-Queens](.\LeetCode\Problem0051.cs)
   - [Medium - 0526 - Beautiful Arrangement](.\LeetCode\Problem0526.cs)
