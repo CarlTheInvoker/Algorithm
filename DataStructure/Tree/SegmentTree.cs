@@ -3,212 +3,166 @@
     using System;
 
     /// <summary>
-    /// Segment tree is very useful when
-    ///     - The data you need to process is associated with interval
-    ///     - The operation on the interval can be easily calculated by the operation result on the sub-interval
-    ///         ( func [a:b) = g(func[a:c), func[c:b)) where a <= c <= b, and g is simple )
-    ///     
-    /// Then the Query / Add / Remove all can be handled in O(log(IntervalLength)), assume g is O(1)
-    /// 
-    /// Assume the operation on the interval is if the interval is contained in the tree, so 
-    ///     func [a:b) = func[a:c) && func[c:b)
-    ///     
-    /// This is the solution of leetcode0715 - Range Module.
+    /// Assume the data associated with the interval is a bool to indicate if the interval exist
     /// </summary>
     public class SegmentTree
     {
-        private readonly int MinValue;
-        private readonly int MaxValue;
-        private Node root;
+        private readonly int minValue;
+        private readonly int maxValue;
         public SegmentTree(int minValue, int maxValue)
         {
-            this.MinValue = minValue;
-            this.MaxValue = maxValue;
+            this.minValue = minValue;
+            this.maxValue = maxValue;
+            this.Root = null;
         }
 
+        internal Node Root { get; private set; }
+
+        /// And the query operation is to check if all numbers in the interval are same
+        /// If an interval is empty, return false
         public bool Query(int left, int right)
         {
             this.ValidateInput(left, right);
-            if (this.root == null)
-            {
-                return false;
-            }
-
-            if (left == right)
-            {
-                return false;
-            }
-
-            return this.root.Query(left, right);
+            return this.Query(this.Root, left, right);
         }
 
         public void Add(int left, int right)
         {
             this.ValidateInput(left, right);
-            if (left == right)
+            if (this.Root == null)
             {
-                return;
+                this.Root = new Node(this.minValue, this.maxValue, false);
             }
 
-            if (this.root == null)
-            {
-                this.root = new Node(this.MinValue, this.MaxValue);
-            }
-
-            this.root.Add(left, right);
+            this.Root = this.Add(this.Root, left, right, this.Root.Left, this.Root.Right);
         }
 
         public void Remove(int left, int right)
         {
             this.ValidateInput(left, right);
-            if (left == right)
-            {
-                return;
-            }
-
-            this.root = this.root?.Remove(left, right);
+            this.Root = this.Remove(this.Root, left, right);
         }
 
         private void ValidateInput(int left, int right)
         {
-            if (left < this.MinValue || right > this.MaxValue)
+            if (left < this.minValue || right > this.maxValue)
             {
-                throw new ArgumentException($"Valid number must be in the interval [{this.MinValue}, {this.MaxValue})");
-            }
-
-            if (left > right)
-            {
-                throw new ArgumentException($"{left} must smaller than {right}");
+                throw new ArgumentException($"Valid number must be in the interval [{this.minValue}, {this.maxValue})");
             }
         }
 
-        /// All operations in the SegmentTreeInterval satisfy: this.Left <= left < right <= this.Right
-        private class Node
+        private bool Query(Node node, int left, int right)
         {
-            public Node(int left, int right)
+            if (left >= right)
+            {
+                // empty interval return exist
+                return true;
+            }
+
+            if (node == null || left < node.Left || right > node.Right)
+            {
+                return false;
+            }
+
+            if (node.Exist)
+            {
+                return true;
+            }
+
+            int middle = (node.Left + node.Right) / 2;
+            if (right < middle)
+            {
+                return this.Query(node.LeftChild, left, right);
+            }
+            else if (left > middle)
+            {
+                return this.Query(node.RightChild, left, right);
+            }
+
+            return this.Query(node.LeftChild, left, middle) && this.Query(node.RightChild, middle, right);
+        }
+
+        private Node Add(Node node, int left, int right, int intervalLeft, int intervalRight)
+        {
+            if (intervalLeft >= right || intervalRight <= left)
+            {
+                return node;
+            }
+
+            if (node == null)
+            {
+                node = new Node(intervalLeft, intervalRight, false);
+                return this.Add(node, left, right, node.Left, node.Right);
+            }
+
+            if (left <= node.Left && node.Right <= right)
+            {
+                node.Exist = true;
+                node.LeftChild = null;
+                node.RightChild = null;
+                return node;
+            }
+
+            int middle = (node.Left + node.Right) / 2;
+            node.LeftChild = this.Add(node.LeftChild, left, right, node.Left, middle);
+            node.RightChild = this.Add(node.RightChild, left, right, middle, node.Right);
+
+            if (node.LeftChild != null && node.LeftChild.Exist && node.RightChild != null && node.RightChild.Exist)
+            {
+                // Merge the node
+                node.LeftChild = null;
+                node.RightChild = null;
+                node.Exist = true;
+            }
+
+            return node;
+        }
+
+        private Node Remove(Node node, int left, int right)
+        {
+            if (node == null || node.Left >= right || node.Right <= left)
+            {
+                return node;
+            }
+
+            if (left <= node.Left && node.Right <= right)
+            {
+                return null;
+            }
+
+            int middle = (node.Left + node.Right) / 2;
+            if (node.Exist)
+            {
+                node.LeftChild = new Node(node.Left, middle, true);
+                node.RightChild = new Node(middle, node.Right, true);
+            }
+
+            node.LeftChild = this.Remove(node.LeftChild, left, right);
+            node.RightChild = this.Remove(node.RightChild, left, right);
+            node.Exist = false;
+            if (node.LeftChild == null && node.RightChild == null)
+            {
+                return null;
+            }
+
+            return node;
+        }
+
+        /// All operations in the SegmentTreeInterval satisfy: this.Left <= left < right <= this.Right
+        internal class Node
+        {
+            public Node(int left, int right, bool exist = false)
             {
                 this.Left = left;
                 this.Right = right;
-                this.AllElementsExist = false;
+                this.Exist = exist;
             }
 
-            public int Left;
-            public int Right;
+            public int Left { get; set; }
+            public int Right { get; set; }
+            public bool Exist { get; set; }
             public Node LeftChild { get; set; }
             public Node RightChild { get; set; }
-            public bool AllElementsExist { get; set; } // For the leaf node, it must be true
-
-            public bool Query(int left, int right)
-            {
-                if (this.AllElementsExist)
-                {
-                    return true;
-                }
-
-                int middle = (this.Left + this.Right) / 2;
-                if (right <= middle)
-                {
-                    return this.LeftChild != null && this.LeftChild.Query(left, right);
-                }
-                else if (left >= middle)
-                {
-                    return this.RightChild != null && this.RightChild.Query(left, right);
-                }
-                else
-                {
-                    return this.LeftChild != null && this.LeftChild.Query(left, middle) && this.RightChild != null && this.RightChild.Query(middle, right);
-                }
-            }
-
-            public void Add(int left, int right)
-            {
-                if (this.AllElementsExist)
-                {
-                    return;
-                }
-
-                if (this.Left == left && this.Right == right)
-                {
-                    this.AllElementsExist = true;
-                    return;
-                }
-
-                int middle = (this.Left + this.Right) / 2;
-                if (right <= middle)
-                {
-                    this.GetOrCreateLeftChild().Add(left, right);
-                }
-                else if (left >= middle)
-                {
-                    this.GetOrCreateRightChild().Add(left, right);
-                }
-                else
-                {
-                    this.GetOrCreateLeftChild().Add(left, middle);
-                    this.GetOrCreateRightChild().Add(middle, right);
-                }
-            }
-
-            public Node Remove(int left, int right)
-            {
-                if (this.Left == left && this.Right == right)
-                {
-                    return null;
-                }
-
-                int middle = (this.Left + this.Right) / 2;
-                if (this.AllElementsExist)
-                {
-                    // No sub-interval exist, create first then udpate it
-                    this.AllElementsExist = false;
-                    this.LeftChild = new Node(this.Left, (this.Left + this.Right) / 2);
-                    this.LeftChild.AllElementsExist = true;
-
-                    this.RightChild = new Node((this.Left + this.Right) / 2, this.Right);
-                    this.RightChild.AllElementsExist = true;
-                }
-
-                if (right <= middle)
-                {
-                    this.LeftChild = this.LeftChild?.Remove(left, right);
-                }
-                else if (left >= middle)
-                {
-                    this.RightChild = this.RightChild?.Remove(left, right);
-                }
-                else
-                {
-                    this.LeftChild = this.LeftChild?.Remove(left, middle);
-                    this.RightChild = this.RightChild?.Remove(middle, right);
-                }
-
-                if (this.LeftChild == null && this.RightChild == null)
-                {
-                    return null;
-                }
-
-                return this;
-            }
-
-            private Node GetOrCreateLeftChild()
-            {
-                if (this.LeftChild == null)
-                {
-                    this.LeftChild = new Node(this.Left, (this.Left + this.Right) / 2);
-                }
-
-                return this.LeftChild;
-            }
-
-            private Node GetOrCreateRightChild()
-            {
-                if (this.RightChild == null)
-                {
-                    this.RightChild = new Node((this.Left + this.Right) / 2, this.Right);
-                }
-
-                return this.RightChild;
-            }
         }
     }
 }

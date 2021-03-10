@@ -87,7 +87,7 @@ namespace DataStructure.Tree
                 TransformRootWhenRemove(now, index);
             }
 
-            // The root node has been merged into a 4-node, check existence again
+            // The Root node has been merged into a 4-node, check existence again
             existInNode = now.GetInsertIndex(key, out index);
 
             while (!existInNode && now.Children[0] != null)
@@ -104,7 +104,7 @@ namespace DataStructure.Tree
 
             TValue value = now.Values[index];
 
-            // Goes to next node and remove minimum, update root
+            // Goes to next node and remove minimum, update Root
             if (now.Children[0] == null)
             {
                 // The key exist in the leaf node
@@ -363,7 +363,7 @@ namespace DataStructure.Tree
 
         /// Will transform node when:
         ///     1. node is 2-node and 2 children are 2-node => node become a 4-node
-        ///     2. root is 2-node and right child is a 3-node => node's left child become a 3-node and right child become a 2-node
+        ///     2. Root is 2-node and right child is a 3-node => node's left child become a 3-node and right child become a 2-node
         /// Return next node to search, must be a 3-node or 4-node
         private static Node TransformRootWhenRemove(Node rootNode, int nextNodeIndex)
         {
@@ -373,7 +373,7 @@ namespace DataStructure.Tree
             {
                 if (rootNode.Children[1 - nextNodeIndex].KeyCount == 1)
                 {
-                    // Update parent node, should only happen when it is the root in the tree
+                    // Update parent node, should only happen when it is the Root in the tree
                     Node left = rootNode.Children[0];
                     Node right = rootNode.Children[1];
                     rootNode.InsertNewKey(left.Keys[0], left.Values[0], left.Children[0], left.Children[1]);
@@ -396,7 +396,7 @@ namespace DataStructure.Tree
             return rootNode;
         }
 
-        /// Because the transform in the root, node now must be a 3-node or 4-node
+        /// Because the transform in the Root, node now must be a 3-node or 4-node
         /// Do some transform to make sure next node is not a 2-node
         private static Node TransformNodeWhenRemove(Node node, int nextNodeIndex)
         {
@@ -426,7 +426,7 @@ namespace DataStructure.Tree
             return node.Children[nextNodeIndex];
         }
 
-        /// Remove the minimum, return the root node
+        /// Remove the minimum, return the Root node
         /// Node must be a 3-node or 4-node
         private static Node RemoveMinimum(Node node, out KeyValuePair<TKey, TValue> result)
         {
