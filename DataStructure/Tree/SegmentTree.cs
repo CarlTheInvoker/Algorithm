@@ -1,4 +1,4 @@
-﻿namespace Algorithm.Tree
+﻿namespace DataStructure.Tree
 {
     using System;
 
@@ -7,9 +7,8 @@
     ///     - The data you need to process is associated with interval
     ///     - The operation on the interval can be easily calculated by the operation result on the sub-interval
     ///         ( func [a:b) = g(func[a:c), func[c:b)) where a <= c <= b, and g is simple )
-    ///     - Known the minValue and maxValue of the interval
     ///     
-    /// Then the Query / Add / Remove all can be handled in O(log(maxValue - minValue)), assume g is O(1)
+    /// Then the Query / Add / Remove all can be handled in O(log(IntervalLength)), assume g is O(1)
     /// 
     /// Assume the operation on the interval is if the interval is contained in the tree, so 
     ///     func [a:b) = func[a:c) && func[c:b)
@@ -20,7 +19,7 @@
     {
         private readonly int MinValue;
         private readonly int MaxValue;
-        private SegmentTreeInterval root;
+        private Node root;
         public SegmentTree(int minValue, int maxValue)
         {
             this.MinValue = minValue;
@@ -53,7 +52,7 @@
 
             if (this.root == null)
             {
-                this.root = new SegmentTreeInterval(this.MinValue, this.MaxValue);
+                this.root = new Node(this.MinValue, this.MaxValue);
             }
 
             this.root.Add(left, right);
@@ -84,9 +83,9 @@
         }
 
         /// All operations in the SegmentTreeInterval satisfy: this.Left <= left < right <= this.Right
-        private class SegmentTreeInterval
+        private class Node
         {
-            public SegmentTreeInterval(int left, int right)
+            public Node(int left, int right)
             {
                 this.Left = left;
                 this.Right = right;
@@ -95,8 +94,8 @@
 
             public int Left;
             public int Right;
-            public SegmentTreeInterval LeftChild { get; set; }
-            public SegmentTreeInterval RightChild { get; set; }
+            public Node LeftChild { get; set; }
+            public Node RightChild { get; set; }
             public bool AllElementsExist { get; set; } // For the leaf node, it must be true
 
             public bool Query(int left, int right)
@@ -150,25 +149,25 @@
                 }
             }
 
-            public SegmentTreeInterval Remove(int left, int right)
+            public Node Remove(int left, int right)
             {
                 if (this.Left == left && this.Right == right)
                 {
                     return null;
                 }
-                
+
                 int middle = (this.Left + this.Right) / 2;
                 if (this.AllElementsExist)
                 {
                     // No sub-interval exist, create first then udpate it
                     this.AllElementsExist = false;
-                    this.LeftChild = new SegmentTreeInterval(this.Left, (this.Left + this.Right) / 2);
+                    this.LeftChild = new Node(this.Left, (this.Left + this.Right) / 2);
                     this.LeftChild.AllElementsExist = true;
 
-                    this.RightChild = new SegmentTreeInterval((this.Left + this.Right) / 2, this.Right);
+                    this.RightChild = new Node((this.Left + this.Right) / 2, this.Right);
                     this.RightChild.AllElementsExist = true;
                 }
-                
+
                 if (right <= middle)
                 {
                     this.LeftChild = this.LeftChild?.Remove(left, right);
@@ -191,21 +190,21 @@
                 return this;
             }
 
-            private SegmentTreeInterval GetOrCreateLeftChild()
+            private Node GetOrCreateLeftChild()
             {
                 if (this.LeftChild == null)
                 {
-                    this.LeftChild = new SegmentTreeInterval(this.Left, (this.Left + this.Right) / 2);
+                    this.LeftChild = new Node(this.Left, (this.Left + this.Right) / 2);
                 }
 
                 return this.LeftChild;
             }
 
-            private SegmentTreeInterval GetOrCreateRightChild()
+            private Node GetOrCreateRightChild()
             {
                 if (this.RightChild == null)
                 {
-                    this.RightChild = new SegmentTreeInterval((this.Left + this.Right) / 2, this.Right);
+                    this.RightChild = new Node((this.Left + this.Right) / 2, this.Right);
                 }
 
                 return this.RightChild;

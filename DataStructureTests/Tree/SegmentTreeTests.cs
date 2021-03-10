@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithm.Tree.Tests
+namespace DataStructure.Tree.Tests
 {
     [TestClass()]
     public class SegmentTreeTests
