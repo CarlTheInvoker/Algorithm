@@ -7,12 +7,12 @@
     /// </summary>
     public class SegmentTree
     {
-        private readonly int minValue;
-        private readonly int maxValue;
+        private readonly int _minValue;
+        private readonly int _maxValue;
         public SegmentTree(int minValue, int maxValue)
         {
-            this.minValue = minValue;
-            this.maxValue = maxValue;
+            this._minValue = minValue;
+            this._maxValue = maxValue;
             this.Root = null;
         }
 
@@ -31,7 +31,7 @@
             this.ValidateInput(left, right);
             if (this.Root == null)
             {
-                this.Root = new Node(this.minValue, this.maxValue, false);
+                this.Root = new Node(this._minValue, this._maxValue, false);
             }
 
             this.Root = this.Add(this.Root, left, right, this.Root.Left, this.Root.Right);
@@ -45,9 +45,9 @@
 
         private void ValidateInput(int left, int right)
         {
-            if (left < this.minValue || right > this.maxValue)
+            if (left < this._minValue || right > this._maxValue)
             {
-                throw new ArgumentException($"Valid number must be in the interval [{this.minValue}, {this.maxValue})");
+                throw new ArgumentException($"Valid number must be in the interval [{this._minValue}, {this._maxValue})");
             }
         }
 

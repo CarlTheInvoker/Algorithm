@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DataStructure.Tree.Tests
 {
@@ -73,9 +74,30 @@ namespace DataStructure.Tree.Tests
         public void QueryTest()
         {
             SegmentTree st = new SegmentTree(0, 16);
-            st.Add(0, 4);
-            st.Add(4, 8);
-            Assert.IsTrue(st.Query(0, 8));
+            st.Add(6, 10);
+            Assert.IsTrue(st.Query(6, 10));
+            Assert.IsTrue(st.Query(6, 8));
+            Assert.IsTrue(st.Query(8, 10));
+            Assert.IsFalse(st.Query(0, 4));
+            Assert.IsFalse(st.Query(0, 6));
+            Assert.IsFalse(st.Query(4, 10));
+            Assert.IsFalse(st.Query(8, 11));
+            Assert.IsFalse(st.Query(10, 16));
+        }
+
+        [TestMethod()]
+        public void InvalidInputTest()
+        {
+            SegmentTree st = new SegmentTree(0, 16);
+            st.Add(6, 10);
+            try
+            {
+                st.Query(-3, 10);
+            }
+            catch (ArgumentException e)
+            {
+                Assert.AreEqual("Valid number must be in the interval [0, 16)", e.Message);
+            }
         }
 
         [TestMethod()]
