@@ -14,6 +14,9 @@ They are categorized by the data structure and algorithm used in the solution.
   - [Medium - 0113 - Path Sum II](.\LeetCode\Problem0113.cs)
   - [Medium - 1145 - Binary Tree Coloring Game](.\LeetCode\Problem1145.cs)
   - [Medium - 1325 - Delete Leaves With a Given Value](.\LeetCode\Problem1325.cs)
+- **Segment Tree**:
+  - [Hard - 0715 - Range Module](.\LeetCode\Problem0715.cs)
+  - [Hard - 0732 - My Calendar III](.\LeetCode\Problem0732.cs)
 
 ## Algorithm
 
