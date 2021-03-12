@@ -2,50 +2,52 @@
 
 This project is the solutions of OJ problems.
 They are categorized by the data structure and algorithm used in the solution.
+The problem with **bold** font is some high quality problem in my opinion.
 
 ## Data Structure
 
 - **Array & List**:
-  - [Medium - 0799 - Champagne Tower](.\LeetCode\Problem0799.cs)
+  - Medium - 0799 - Champagne Tower
 - **Stack**:
-  - [Medium - 0071 - Simplify Path](.\LeetCode\Problem0071.cs)
-  - [Medium - 1124 - Longest Well-Performing Interval](.\LeetCode\Problem1124.cs)
+  - Medium - 0071 - Simplify Path
+  - Medium - 1124 - Longest Well-Performing Interval
+  - **Medium - 1776 - Car Fleet II**
 - **Binary Tree**:
-  - [Medium - 0113 - Path Sum II](.\LeetCode\Problem0113.cs)
-  - [Medium - 1145 - Binary Tree Coloring Game](.\LeetCode\Problem1145.cs)
-  - [Medium - 1325 - Delete Leaves With a Given Value](.\LeetCode\Problem1325.cs)
+  - Medium - 0113 - Path Sum II
+  - Medium - 1145 - Binary Tree Coloring Game
+  - Medium - 1325 - Delete Leaves With a Given Value
 - **Segment Tree**:
-  - [Hard - 0715 - Range Module](.\LeetCode\Problem0715.cs)
-  - [Hard - 0732 - My Calendar III](.\LeetCode\Problem0732.cs)
+  - Hard - 0715 - Range Module
+  - Hard - 0732 - My Calendar III
 
 ## Algorithm
 
 - **Math**:
-  - [Medium - 0754 - Reach a Number](.\LeetCode\Problem0754.cs)
-  - [Hard - 829 - Consecutive Numbers Sum](.\LeetCode\Problem0829.cs)
+  - Medium - 0754 - Reach a Number
+  - Hard - 829 - Consecutive Numbers Sum
 - **Bit operation**:
-  - [Medium - 0338 - Counting Bits](.\LeetCode\Problem0338.cs)
+  - Medium - 0338 - Counting Bits
 - **Brutal force**:
-  - [Hard - 0679 - 24 Game](.\LeetCode\Problem0679.cs)
+  - Hard - 0679 - 24 Game
 - **Sort & Search**:
   - *Search - BinarySearch*:
-    - [Hard - 0793 - Preimage Size of Factorial Zeroes Function](.\LeetCode\Problem0793.cs)
+    - Hard - 0793 - Preimage Size of Factorial Zeroes Function
   - *Sort - MergeSort*:
-    - [Hard - 0493 - Reverse Pairs](.\LeetCode\Problem0493.cs)
+    - Hard - 0493 - Reverse Pairs
   - *Sort*:
-    - [Medium - 1727 - Largest Submatrix With Rearrangements](.\LeetCode\Problem1727.cs)
+    - Medium - 1727 - Largest Submatrix With Rearrangements
 - **String operation**:
-  - [Medium - 0722 - Remove Comments](.\LeetCode\Problem0722.cs)
+  - Medium - 0722 - Remove Comments
 - **Greedy algorithm**:
-  - [Hard - 1520 - Maximum Number of Non-Overlapping Substrings](.\LeetCode\Problem1520.cs)
+  - Hard - 1520 - Maximum Number of Non-Overlapping Substrings
 - **Dynamic Programming**:
-  - [Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee](.\LeetCode\Problem0714.cs)
-  - [Hard - 0118 - Best Time to Buy and Sell Stock IV](.\LeetCode\Problem0188.cs)
+  - Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee
+  - Hard - 0118 - Best Time to Buy and Sell Stock IV
 - **Back Tracing**:
-  - [Hard - 0051 - N-Queens](.\LeetCode\Problem0051.cs)
-  - [Medium - 0526 - Beautiful Arrangement](.\LeetCode\Problem0526.cs)
-  - [Hard - 1655 - Distribute Repeating Integers](.\LeetCode\Problem1655.cs)
+  - Hard - 0051 - N-Queens
+  - Medium - 0526 - Beautiful Arrangement
+  - Hard - 1655 - Distribute Repeating Integers
 
 ## Others
 
-- [Hard - 1591 - Strange Printer II](.\LeetCode\Problem1591.cs)
+- Hard - 1591 - Strange Printer II
