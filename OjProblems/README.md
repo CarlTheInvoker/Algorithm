@@ -8,6 +8,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 
 - **Array & List**:
   - Medium - 0799 - Champagne Tower
+  - Medium - 0923 - 3Sum With Multiplicity
 - **Stack**:
   - Medium - 0071 - Simplify Path
   - Medium - 1124 - Longest Well-Performing Interval
@@ -16,6 +17,8 @@ The problem with **bold** font is some high quality problem in my opinion.
   - Medium - 0113 - Path Sum II
   - Medium - 1145 - Binary Tree Coloring Game
   - Medium - 1325 - Delete Leaves With a Given Value
+  - Medium - 1339 - Maximum Product of Splitted Binary Tree
+  - Hard - 1373 - Maximum Sum BST in Binary Tree
 - **Segment Tree**:
   - Hard - 0715 - Range Module
   - Hard - 0732 - My Calendar III
