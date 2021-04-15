@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace OjProblems.LeetCode
+﻿namespace OjProblems.LeetCode
 {
+    using System;
+    using System.Collections.Generic;
+
     internal class Problem0996
     {
         public class Solution

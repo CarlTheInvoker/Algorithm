@@ -8,6 +8,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 
 - **Array & List**:
   - Medium - 0799 - Champagne Tower
+  - Medium - 0560 - Subarray Sum Equals K
   - Medium - 0923 - 3Sum With Multiplicity
 - **Stack**:
   - Medium - 0071 - Simplify Path
@@ -49,6 +50,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 - **Back Tracing**:
   - Hard - 0051 - N-Queens
   - Medium - 0526 - Beautiful Arrangement
+  - Hard - 0996 - Number of Squareful Arrays    
   - Hard - 1655 - Distribute Repeating Integers
 
 ## Others
