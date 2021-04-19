@@ -45,6 +45,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 - **Greedy algorithm**:
   - Hard - 1520 - Maximum Number of Non-Overlapping Substrings
 - **Dynamic Programming**:
+  - Hard - 0329 - Longest Increasing Path in a Matrix
   - Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee
   - Hard - 0118 - Best Time to Buy and Sell Stock IV
 - **Back Tracing**:
