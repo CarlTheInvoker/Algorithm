@@ -31,6 +31,7 @@ The problem with **bold** font is some high quality problem in my opinion.
   - Hard - 829 - Consecutive Numbers Sum
 - **Bit operation**:
   - Medium - 0338 - Counting Bits
+  - Hard - 1542 - Find Longest Awesome Substring
 - **Brutal force**:
   - Hard - 0679 - 24 Game
 - **Sort & Search**:
