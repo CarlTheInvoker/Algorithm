@@ -7,6 +7,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 ## Data Structure
 
 - **Array & List**:
+  - Medium - 0046 - Permutations
   - Medium - 0799 - Champagne Tower
   - Medium - 0560 - Subarray Sum Equals K
   - Medium - 0923 - 3Sum With Multiplicity
