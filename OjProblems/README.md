@@ -7,6 +7,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 ## Data Structure
 
 - **Array & List**:
+  - Medium - 0043 - Multiply Strings
   - Medium - 0046 - Permutations
   - Medium - 0799 - Champagne Tower
   - Medium - 0560 - Subarray Sum Equals K
@@ -44,6 +45,7 @@ The problem with **bold** font is some high quality problem in my opinion.
     - Medium - 1727 - Largest Submatrix With Rearrangements
 - **String operation**:
   - Medium - 0722 - Remove Comments
+  - Medium - 0926 - Flip String to Monotone Increasing
 - **Greedy algorithm**:
   - Hard - 1520 - Maximum Number of Non-Overlapping Substrings
 - **Dynamic Programming**:
@@ -53,7 +55,8 @@ The problem with **bold** font is some high quality problem in my opinion.
 - **Back Tracing**:
   - Hard - 0051 - N-Queens
   - Medium - 0526 - Beautiful Arrangement
-  - Hard - 0996 - Number of Squareful Arrays    
+  - Hard - 0996 - Number of Squareful Arrays
+  - Hard - 1284 - Minimum Number of Flips to Convert Binary Matrix to Zero Matrix
   - Hard - 1655 - Distribute Repeating Integers
 
 ## Others
