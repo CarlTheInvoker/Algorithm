@@ -30,7 +30,7 @@ The problem with **bold** font is some high quality problem in my opinion.
 
 - **Math**:
   - Medium - 0754 - Reach a Number
-  - Hard - 829 - Consecutive Numbers Sum
+  - Hard - 0829 - Consecutive Numbers Sum
 - **Bit operation**:
   - Medium - 0338 - Counting Bits
   - Hard - 1542 - Find Longest Awesome Substring
@@ -49,9 +49,10 @@ The problem with **bold** font is some high quality problem in my opinion.
 - **Greedy algorithm**:
   - Hard - 1520 - Maximum Number of Non-Overlapping Substrings
 - **Dynamic Programming**:
+  - Hard - 0118 - Best Time to Buy and Sell Stock IV
   - Hard - 0329 - Longest Increasing Path in a Matrix
   - Medium - 0714 - Best Time to Buy and Sell Stock with Transaction Fee
-  - Hard - 0118 - Best Time to Buy and Sell Stock IV
+  - Hard - 1691 - Maximum Height by Stacking Cuboids
 - **Back Tracing**:
   - Hard - 0051 - N-Queens
   - Medium - 0526 - Beautiful Arrangement
